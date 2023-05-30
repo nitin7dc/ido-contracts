@@ -162,6 +162,26 @@ export default {
           )
         : "auto",
     },
+    polygonZKEVMTestNet: {
+      ...sharedNetworkConfig,
+      chainId: 1442,
+      url: "https://rpc.public.zkevm-test.net",
+      gasPrice: GAS_PRICE_GWEI
+        ? parseInt(
+            utils.parseUnits(GAS_PRICE_GWEI.toString(), "gwei").toString(),
+          )
+        : "auto",
+    },
+    polygonZKEVMMainnet: {
+      ...sharedNetworkConfig,
+      chainId: 1101,
+      url: "https://zkevm-rpc.com",
+      gasPrice: GAS_PRICE_GWEI
+        ? parseInt(
+            utils.parseUnits(GAS_PRICE_GWEI.toString(), "gwei").toString(),
+          )
+        : "auto",
+    },
   },
   namedAccounts: {
     deployer: 0,
