@@ -162,7 +162,7 @@ export default {
           )
         : "auto",
     },
-    polygonZKEVMTestNet: {
+    polygonZKEVMTestnet: {
       ...sharedNetworkConfig,
       chainId: 1442,
       url: "https://rpc.public.zkevm-test.net",
@@ -190,6 +190,27 @@ export default {
     timeout: 2000000,
   },
   etherscan: {
-    apiKey: MY_ETHERSCAN_API_KEY,
+    apiKey: {
+      polygonZKEVMTestnet: process.env.ETHERSCAN_API_KEY,
+      goerli: process.env.ETHERSCAN_API_KEY
+    },
+    customChains: [
+      {
+        network: "polygonZKEVMTestnet",
+        chainId: 1442,
+        urls: {
+          apiURL: "https://api-testnet-zkevm.polygonscan.com/api",
+          browserURL: "https://testnet-zkevm.polygonscan.com/"
+        }
+      },
+      {
+        network: "polygonZKEVMMainnet",
+        chainId: 1101,
+        urls: {
+          apiURL: "https://api-zkevm.polygonscan.com/api",
+          browserURL: "https://https://zkevm.polygonscan.com/"
+        }
+      }
+    ]
   },
 };
