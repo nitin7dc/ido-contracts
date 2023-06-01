@@ -192,6 +192,7 @@ export default {
   etherscan: {
     apiKey: {
       polygonZKEVMTestnet: process.env.ETHERSCAN_API_KEY,
+      polygonZKEVMMainnet: process.env.ETHERSCAN_API_KEY,
       goerli: process.env.ETHERSCAN_API_KEY
     },
     customChains: [
